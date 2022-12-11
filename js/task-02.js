@@ -12,15 +12,16 @@ const ingredientsList = document.getElementById(`ingredients`);
 
 const ingredientsElement = ingredients.forEach(ingredient => {
 
-  const newli = document.createElement(`li`);
+  const newItem = document.createElement(`li`);
 
-  newli.innerHTML = ingredient;
-  newli.classList.add(`item`);
+  newItem.innerHTML = ingredient;
+  newItem.classList.add(`item`);
   
-  ingredientsList.append(newli);
+  ingredientsList.append(newItem);
 
 });
 
+// console.log(ingredientsElement);
 
 // Напиши скрипт, який для кожного елемента масиву ingredients:
 

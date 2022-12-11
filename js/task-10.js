@@ -1,6 +1,22 @@
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
 
+const reference = {
+  boxes: document.querySelector('div#boxes'),
+  input: document.querySelector('input[type="number"]'),
+  createButton: document.querySelector('button[data-create]'),
+  destroyButton: document.querySelector('button[data-destroy]'),
+}
 
+console.log(reference);
 
+const getItemMarkup = (index) => `<div class="item"
+ style="background-color: ${getRandomHexColor()}; width: ${30 + 10 * index}px; height: ${30 + 10 * index}px"></div>`
+
+console.log(getItemMarkup);
 
 
 
