@@ -8,20 +8,16 @@ const ingredients = [
   'Condiments',
 ];
 
+
 const ingredientsList = document.getElementById(`ingredients`);
 
-const ingredientsElement = ingredients.forEach(ingredient => {
+const getItemMarkup = (ingredient) => `<li class="item">${ingredient}</li>`
+const getListMarkup = (ingredientsArray) => ingredientsArray.map(ingredient => getItemMarkup(ingredient)).join('')
 
-  const newItem = document.createElement(`li`);
+// console.log(getItemMarkup);
+// console.log(getListMarkup);
 
-  newItem.innerHTML = ingredient;
-  newItem.classList.add(`item`);
-  
-  ingredientsList.append(newItem);
-
-});
-
-// console.log(ingredientsElement);
+ingredientsList.insertAdjacentHTML('afterbegin', getListMarkup(ingredients));
 
 // Напиши скрипт, який для кожного елемента масиву ingredients:
 

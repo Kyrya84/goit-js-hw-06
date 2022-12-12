@@ -14,10 +14,11 @@ const reference = {
 console.log(reference);
 
 const getItemMarkup = (index) => `<div class="item"
- style="background-color: ${getRandomHexColor()}; width: ${30 + 10 * index}px; height: ${30 + 10 * index}px"></div>`
+ style="background-color: ${getRandomHexColor()}; width: ${30 + 10}px; height: ${30 + 10}px"></div>`
 
 console.log(getItemMarkup);
 
+const getItemListMarkup = (amount) => Array(amount).fill('').map((_, i) => getItemMarkup(i)).join('')
 
 
 

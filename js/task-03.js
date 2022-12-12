@@ -15,14 +15,13 @@ const images = [
 
 const galleryList = document.querySelector(`.gallery`);
 
-// console.log(galleryList);
+const getItemMarkup = ({ url, alt }) => `<li class="item"><img class="image" src="${url}" alt="${alt}" width = "600"/></li>`;
+const getListMarkup = (imagesList) => imagesList.map(img => getItemMarkup(img)).join('');
 
-images.forEach(image => {
-  galleryList.insertAdjacentHTML(
-    'afterbegin',
-    `<li class = "item"><img src = "${image.url}" alt = "${image.alt}"  width = "600"/></li>`,
-  );
-});
+// console.log(getItemMarkup);
+// console.log(getListMarkup);
+
+galleryList.insertAdjacentHTML('afterbegin', getListMarkup(images));
 
 // // Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. 
 // Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().

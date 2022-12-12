@@ -1,27 +1,24 @@
-const registrationForm = document.querySelector('form.login-form');
+const registrationForm = document.querySelector('form.login-form')
 
-registrationForm.addEventListener('submit', loginFormConfirms)
+registrationForm.addEventListener('submit', submitHandler)
 
-function loginFormConfirms(event) {
-  event.preventDefault();
-
+function submitHandler(event) {
+  event.preventDefault()
+  
   const {email, password} = event.currentTarget.elements;
 
-  if (email.value === '' && password.value === '') {
+    if (email.value === '' || password.value === '') {
+        return alert('All fields must be filled in!')
+  };
 
-    return alert('All fields must be filled in!');
-  }
-
-  const formData = {
-    email: email.value,
-    password: password.value,
-  }
-// console.log(formData);
+  const formDetails = { email: email.value, Password: password.value };
     
-event.currentTarget.reset();
-
+  console.log(formDetails);
+  
+  event.currentTarget.reset()
 }
-// console.log(handleSubmitForm);
+
+// console.log(submitHandler);
 
 // Напиши скрипт управління формою логіна.
 
